@@ -1,0 +1,10 @@
+[
+  { "input": "GB82 WEST 1234 5698 7654 32",       "valid": true,  "note": "UK example" },
+  { "input": "DE89 3704 0044 0532 0130 00",       "valid": true,  "note": "Germany example" },
+  { "input": "FR14 2004 1010 0505 0001 3M02 606", "valid": true,  "note": "France example" },
+  { "input": "NL91 ABNA 0417 1643 00",            "valid": true,  "note": "Netherlands example" },
+  { "input": "GB82 WEST 1234 5698 7654 33",       "valid": false, "note": "wrong check digits" },
+  { "input": "GB82 TEST 1234 5698 7654 32",       "valid": false, "note": "checksum fails" },
+  { "input": "ZZ00 0000 0000 0000",               "valid": false, "note": "unsupported country" },
+  { "input": "GB82 WEST 1234 5698 7654",          "valid": false, "note": "too short for GB" }
+]

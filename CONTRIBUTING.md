@@ -1,55 +1,49 @@
 # Contributing to bank-lint
 
-Thanks for your interest in bank-lint. This is a dual-language library
-(JavaScript/TypeScript and Python) with one guiding rule.
+bank-lint is a dual-language library (JavaScript/TypeScript and Python) with
+one guiding rule.
 
 ## The parity rule
 
-bank-lint must behave **identically** in both languages. So:
+bank-lint must behave **identically** in both languages. So any change to
+validation behaviour must:
 
-1. Behaviour is defined by the shared vectors in `test-vectors/*.json`.
-2. Any change to validation behaviour must:
-   - update or add a case in the relevant `test-vectors/*.json` file, and
-   - be implemented in **both** `packages/js` and `packages/python`, and
-   - keep both test suites green.
+1. update or add a case in the relevant `test-vectors/*.json` file, and
+2. be implemented in **both** `packages/js` and `packages/python`, and
+3. keep both test suites green.
 
 A change that touches only one language will not be merged.
 
 ## Reference data
 
-Validation data (e.g. IBAN lengths, UK modulus tables) lives in `data/*.json`
-as the single source of truth. The per-language files are generated from it —
-edit the JSON, then re-run the generator in `scripts/`. Never hand-edit a
-generated file (they carry an "AUTO-GENERATED" header).
+Validation data (e.g. IBAN lengths) lives in `data/*.json` as the single
+source of truth. Per-language files are generated from it via `scripts/` —
+edit the JSON, re-run the generator, never hand-edit an "AUTO-GENERATED" file.
 
 ## Running the tests
 
 JavaScript:
 
-    cd packages/js
-    npm install
-    npm test
+    cd packages/js && npm install && npm test
 
 Python:
 
     cd packages/python
-    python3 -m venv .venv
-    source .venv/bin/activate
+    python3 -m venv .venv && source .venv/bin/activate
     pip install -e ".[dev]"
     python -m pytest
 
 ## Fixing a bug
 
-Add a failing case to the relevant `test-vectors/*.json` first (red), then fix
-it in both languages until green. That case becomes a permanent regression test.
+Add a failing case to `test-vectors/*.json` first (red), then fix it in both
+languages until green.
 
 ## Commit messages
 
-Use Conventional Commits: `feat:`, `fix:`, `chore:`, `docs:`, `test:`.
-Keep commits small and focused.
+Conventional Commits: `feat:`, `fix:`, `chore:`, `docs:`, `test:`.
 
 ## Scope
 
 bank-lint checks the **structural** validity of bank identifiers (format,
-length, checksum). It does **not** confirm an account exists or is open, do
-name matching, or Confirmation of Payee. Those are out of scope.
+length, checksum). It does **not** confirm an account exists, do name
+matching, or Confirmation of Payee. Those are out of scope.
