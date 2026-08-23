@@ -1,6 +1,6 @@
 {
   "name": "bank-lint",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Validate bank and account details — IBAN, UK sort codes, US routing numbers.",
   "type": "module",
   "main": "./dist/index.js",
