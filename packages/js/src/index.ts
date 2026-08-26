@@ -1,4 +1,4 @@
-export const VERSION = "0.0.1";
+export const VERSION = "0.2.0";
 
 export { validateIban } from "./iban.js";
 export { validateUsRouting } from "./us-routing.js";

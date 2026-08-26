@@ -3,6 +3,6 @@ import { VERSION } from "../src/index.js";
 
 describe("bank-lint", () => {
   it("exposes a version", () => {
-    expect(VERSION).toBe("0.0.1");
+    expect(VERSION).toBe("0.2.0");
   });
 });

@@ -1,4 +1,4 @@
-__version__ = "0.0.1"
+__version__ = "0.2.0"
 
 from bank_lint.iban import validate_iban
 from bank_lint.us_routing import validate_us_routing
