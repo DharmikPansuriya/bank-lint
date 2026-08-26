@@ -17,7 +17,7 @@ and get the same answer, with the same error codes.
 | Validator                     | Status       |
 | ----------------------------- | ------------ |
 | IBAN (mod-97, 89 countries)   | ✅ available |
-| US ABA routing number         | 🚧 planned   |
+| US ABA routing number         | ✅ available |
 | UK sort code + account number | 🚧 planned   |
 
 ## Quick start
@@ -26,7 +26,7 @@ and get the same answer, with the same error codes.
 
     npm install bank-lint
 
-    import { validateIban } from "bank-lint";
+    import { validateIban, validateUsRouting } from "bank-lint";
 
     validateIban("GB82 WEST 1234 5698 7654 32");
     // { valid: true, value: "GB82WEST12345698765432", error: null }
@@ -34,16 +34,22 @@ and get the same answer, with the same error codes.
     validateIban("GB82 WEST 1234 5698 7654 33");
     // { valid: false, value: "GB82WEST12345698765433", error: "INVALID_CHECKSUM" }
 
+    validateUsRouting("021000021");
+    // { valid: true, value: "021000021", error: null }
+
 **Python**
 
     pip install bank-lint
 
-    from bank_lint import validate_iban
+    from bank_lint import validate_iban, validate_us_routing
 
     validate_iban("GB82 WEST 1234 5698 7654 32")
     # ValidationResult(valid=True, value='GB82WEST12345698765432', error=None)
 
-Spaces and lower-case are handled for you; `value` is the normalised input.
+    validate_us_routing("021000021")
+    # ValidationResult(valid=True, value='021000021', error=None)
+
+Spaces, hyphens, and lower-case are handled for you; `value` is the normalised input.
 
 ## Result shape
 

@@ -1,0 +1,18 @@
+[
+  { "input": "021000021", "valid": true, "note": "JPMorgan Chase (NY)" },
+  { "input": "111000025", "valid": true, "note": "JPMorgan Chase (TX)" },
+  { "input": "121000248", "valid": true, "note": "Wells Fargo" },
+  { "input": "026009593", "valid": true, "note": "Bank of America (NY)" },
+  { "input": "1110 0002 5", "valid": true, "note": "spaces allowed" },
+  { "input": "1110-0002-5", "valid": true, "note": "hyphens allowed" },
+  { "input": "211000022", "valid": true, "note": "prefix 21–32 thrift range" },
+  { "input": "611000017", "valid": true, "note": "prefix 61–72 electronic range" },
+  { "input": "800000006", "valid": true, "note": "prefix 80 traveler's checks range" },
+  { "input": "021000022", "valid": false, "error": "INVALID_CHECKSUM", "note": "bad check digit" },
+  { "input": "123456789", "valid": false, "error": "INVALID_CHECKSUM", "note": "checksum fails" },
+  { "input": "990000000", "valid": false, "error": "INVALID_FORMAT", "note": "checksum ok, prefix 99 not in ABA ranges" },
+  { "input": "1234", "valid": false, "error": "INVALID_LENGTH", "note": "too short" },
+  { "input": "1234567890", "valid": false, "error": "INVALID_LENGTH", "note": "too long" },
+  { "input": "ABCDEFGHI", "valid": false, "error": "INVALID_FORMAT", "note": "letters" },
+  { "input": "", "valid": false, "error": "INVALID_FORMAT", "note": "empty" }
+]

@@ -5,7 +5,7 @@ build-backend = "hatchling.build"
 [project]
 name = "bank-lint"
 version = "0.1.1"
-description = "Validate IBANs offline (mod-97, 89 countries). US and UK validators coming soon."
+description = "Validate bank and account details — IBAN, US routing numbers. UK sort codes coming soon."
 readme = "README.md"
 requires-python = ">=3.9"
 license = { text = "MIT" }
