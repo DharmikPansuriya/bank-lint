@@ -108,22 +108,30 @@ generated file.
 ## Releasing
 
 Bump the version in **both** `packages/js/package.json` and
-`packages/python/pyproject.toml` to the same number, then publish each.
+`packages/python/pyproject.toml` to the same number (and the source
+`VERSION` / `__version__` constants), then:
+
+    ./publish.sh
+
+Copy `.env.example` to `.env` and set `NPM_TOKEN` and `PYPI_TOKEN`
+(or export them in your shell). `.env` is gitignored. Confirmation
+prompts are auto-answered.
+
+Manual equivalent:
 
 **npm** (from `packages/js`)
 
     npm run build
-    npm publish --dry-run          # sanity-check files + version
-    npm publish --access public    # requires 2FA
+    npm publish --dry-run
+    npm publish --access public
 
 **PyPI** (from `packages/python`)
 
-    rm -rf dist/ build/ src/*.egg-info
+    rm -rf dist build
     python -m build
-    twine check dist/*             # must say PASSED
-    twine upload dist/*            # user: __token__, password: pypi-... token
+    twine check dist/*
+    twine upload dist/*
 
-Versions are permanent on both registries — always dry-run / `twine check` first.
 
 ## Contributing
 
