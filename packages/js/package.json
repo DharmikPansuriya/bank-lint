@@ -19,7 +19,7 @@
     "test:watch": "vitest"
   },
   "keywords": ["iban", "bank", "validation", "sort-code", "routing-number", "aba"],
-  "license": "MIT",
+  "license": "PolyForm-Noncommercial-1.0.0",
   "author": "Dharmik Pansuriya",
   "devDependencies": {
     "typescript": "^5.5.0",

@@ -3,7 +3,7 @@
 [![CI](https://github.com/DharmikPansuriya/bank-lint/actions/workflows/ci.yml/badge.svg)](https://github.com/DharmikPansuriya/bank-lint/actions/workflows/ci.yml)
 [![npm](https://img.shields.io/npm/v/bank-lint?label=npm)](https://www.npmjs.com/package/bank-lint)
 [![PyPI](https://img.shields.io/pypi/v/bank-lint?label=pypi)](https://pypi.org/project/bank-lint/)
-[![license](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
+[![license](https://img.shields.io/badge/license-PolyForm--NC-blue)](LICENSE)
 
 Validate bank and account details offline — the same way in **JavaScript/TypeScript
 and Python**. No API calls, no dependencies.
@@ -140,4 +140,6 @@ behaviour must land in **both** languages with a matching shared test vector.
 
 ## License
 
-[MIT](LICENSE)
+[PolyForm Noncommercial 1.0.0](LICENSE). Personal, research, and
+nonprofit use is allowed. Commercial use needs a separate license from
+the author.

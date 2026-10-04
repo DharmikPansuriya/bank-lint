@@ -60,4 +60,6 @@ Country IBAN lengths are sourced from the official SWIFT IBAN Registry.
 
 ## License
 
-MIT
+[PolyForm Noncommercial 1.0.0](../../LICENSE). Personal, research, and
+nonprofit use is allowed. Commercial use needs a separate license from
+the author.
